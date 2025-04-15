@@ -1,0 +1,46 @@
+<odoo>
+    <!-- Custom List View for OP History -->
+    <record id="view_doctor_appointments_op_history_list" model="ir.ui.view">
+      <field name="name">doctor.appointments.op.history.list</field>
+      <field name="model">doctor.appointments</field>
+      <field name="arch" type="xml">
+        <list string="Doctor Appointments - OP History">
+          <field name="appointment_date"/>
+          <field name="reference_id"/>
+          <field name="patient_id"/>
+          <field name="age"/>
+          <field name="gender"/>
+          <field name="op_number"/>
+         
+          <!-- Additional Fields for OP History -->
+          <field name="chief_complaint"/>
+          <field name="associated_complaint"/>
+          <field name="special_note"/>
+          <button name="%(dr_home.action_print_op_summary)d" type="action" string="OP Summary"
+          class="oe_highlight" />
+          <button name="%(dr_home.action_print_overall_summary)d"
+    type="action"
+    string="Overall Summary"
+    class="oe_highlight btn-primary"/>
+        </list>
+      </field>
+    </record>
+   
+    <!-- Search View for OP History (optional) -->
+    <record id="appointment_booking_op_history_search" model="ir.ui.view">
+      <field name="name">doctor.appointments.op.history.search</field>
+      <field name="model">doctor.appointments</field>
+      <field name="arch" type="xml">
+        <search string="Search Past Appointments">
+          <field name="name"/>
+          <field name="phone"/>
+          <field name="reference_id"/>
+          <field name="state"/>
+          <filter name="booked" string="Booked" domain="[('state', '=', 'booked')]"/>
+          <filter name="completed" string="Completed" domain="[('state', '=', 'completed')]"/>
+          <filter name="cancelled" string="Cancelled" domain="[('state', '=', 'cancelled')]"/>
+        </search>
+      </field>
+    </record>
+  </odoo>
+   

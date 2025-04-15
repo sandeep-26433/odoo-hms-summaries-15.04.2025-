@@ -1,0 +1,18 @@
+<odoo>
+
+<data>
+
+
+<record id="action_print_overall_summary" model="ir.actions.report">
+    <field name="name">Overall Summary</field>
+    <field name="model">doctor.appointments</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">dr_home.report_overall_summary</field>
+    <field name="report_file">dr_home.report_overall_summary</field>
+    <field name="binding_model_id" ref="model_doctor_appointments"/>
+    <field name="binding_type">report</field>
+    <field name="print_report_name">'Overall_Summary_%s' % object.reference_id</field>
+</record>
+
+
+</data></odoo>

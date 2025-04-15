@@ -1,0 +1,163 @@
+<odoo>
+    <data>
+        <odoo>
+            <data>
+                <template id="report_overall_summary">
+                    <t t-call="web.html_container">
+                        <t t-call="web.external_layout_standard">
+                            <div class="page"
+                                style="padding: 10px; font-family: 'Times New Roman', Times, serif;">
+                                <h3 style="text-align: center; color: #630000;">
+                                    <u>OVERALL   SUMMARY</u>
+                                </h3>
+
+
+                                <t t-set="first_doc" t-value="docs[0]" />
+
+                                <div class="oe_structure"
+                                    style="flex-grow: 1; padding-bottom: 10px;">
+                                    <table class="table o_table table-borderless"
+                                        style="border-collapse: collapse; width: 100%; table-layout: fixed; border: none; margin:0;padding:0;">
+                                        <tbody>
+                                            <tr style="line-height: 1; vertical-align: top;">
+                                                <td
+                                                    style="width: 60%; padding: 2px 3px; vertical-align: top;">
+                                                    <strong>Name:</strong>
+                    <t
+                                                        t-esc="first_doc.patient_name" /> ( <t
+                                                        t-esc="first_doc.patient_age" />/
+                    <t
+                                                        t-esc="first_doc.gender" /> ) </td>
+                                                <td
+                                                    style="width: 60%; padding: 2px 3px; vertical-align: top;">
+                                                    <strong>UH-ID:</strong>
+                                                    <t t-esc="first_doc.patient_id" />
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <t t-foreach="docs" t-as="doc">
+                                    <div style="margin-bottom:10px;margint-top:10px;font-size:18px">
+
+                                       
+                                        <u>
+                                         <bold>
+                                            <strong>Date:</strong>
+                                        </bold>
+                                        <t t-esc="doc.appointment_date" />
+                                        </u>
+                                        
+
+                                    </div>
+
+                                    <div style="margin-top: 10px; line-height: 1;">
+                                        <t t-if="doc.chief_complaint"
+                                            style="line-height: 1; vertical-align: top;">
+                                            <p>
+                                                <strong>Cheif Complaint:</strong>
+                                                <t t-esc="doc.chief_complaint" />
+                                            </p>
+                                        </t>
+
+
+                                        <t t-if="doc.associated_complaint">
+                                            <p>
+                                                <strong>Associated Complaint:</strong>
+                                                <t t-esc="doc.associated_complaint" />
+                                            </p>
+                                        </t>
+                                        <t t-if="doc.past_history">
+                                            <p>
+                                                <strong>Past History:</strong>
+                                                <t t-esc="doc.past_history" />
+                                            </p>
+                                        </t>
+                                        <t t-if="doc.family_history">
+                                            <p>
+                                                <strong>Family History:</strong>
+                                                <t t-esc="doc.family_history" />
+                                            </p>
+                                        </t>
+                                        <t t-if="doc.present_history">
+                                            <p>
+                                                <strong>Present History:</strong>
+                                                <t t-esc="doc.present_history" />
+                                            </p>
+                                        </t>
+                                        <t t-if="doc.diagnosis">
+                                            <p>
+                                                <strong>Diagnosis:</strong>
+                                                <t t-esc="doc.diagnosis" />
+                                            </p>
+                                        </t>
+                                        <t t-if="doc.investigations">
+                                            <p>
+                                                <strong>Investigations:</strong>
+                                                <t t-esc="doc.investigations" />
+                                            </p>
+                                        </t>
+                                        <t t-if="doc.panchakarma_advice">
+                                            <p>
+                                                <strong>Panchakarma Advice:</strong>
+                                                <t t-esc="doc.panchakarma_advice" />
+                                            </p>
+                                        </t>
+                                        <t t-if="doc.artava">
+                                            <p>
+                                                <strong>Artava:</strong>
+                                                <t t-esc="doc.artava" />
+                                            </p>
+                                        </t>
+                                        <t t-if="doc.nadi">
+                                            <p>
+                                                <strong>Nadi:</strong>
+                                                <t t-esc="doc.nadi" />
+                                            </p>
+                                        </t>
+                                        <t t-if="doc.agni">
+                                            <p>
+                                                <strong>Agni:</strong>
+                                                <t t-esc="doc.agni" />
+                                            </p>
+                                        </t>
+                                        <t t-if="doc.mala">
+                                            <p>
+                                                <strong>Mala:</strong>
+                                                <t t-esc="doc.mala" />
+                                            </p>
+                                        </t>
+                                        <t t-if="doc.mutra">
+                                            <p>
+                                                <strong>Mutra:</strong>
+                                                <t t-esc="doc.mutra" />
+                                            </p>
+                                        </t>
+                                        <t t-if="doc.nidra">
+                                            <p>
+                                                <strong>Nidra:</strong>
+                                                <t t-esc="doc.nidra" />
+                                            </p>
+                                        </t>
+                                        <t t-if="doc.manas">
+                                            <p>
+                                                <strong>Manas:</strong>
+                                                <t t-esc="doc.manas" />
+                                            </p>
+                                        </t>
+
+
+                                    </div>
+                                </t>
+                            </div>
+                        </t>
+                    </t>
+                </template>
+            </data>
+        </odoo>
+
+
+    </data>
+
+
+</odoo>

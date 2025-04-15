@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_doctor_appointments_user,doctor.appointments: User Access,model_doctor_appointments,base.group_user,1,1,1,1
+access_doctor_medicines_user,doctor.medicines: User Access,model_doctor_medicines,base.group_user,1,1,1,1
+access_doctor_dosages_user,doctor.dosages: User Access,model_doctor_dosages,base.group_user,1,1,1,1
+access_doctor_medicine_lines_user,doctor.medicine.lines: User Access,model_doctor_medicine_lines,base.group_user,1,1,1,1
+access_report_appointment,Access Appointment Report,model_report_dr_home_appointment_report_template,base.group_user,1,1,1,1
+access_report_appointment_report,Access Report Appointment Report,model_report_appointment_report,base.group_user,1,1,1,1
+access_report_medicine_lines,Access Report Medicine Lines,model_report_medicine_lines,base.group_user,1,1,1,1
+access_report_op_summary,Access Report Summary,model_report_op_summary,base.group_user,1,1,1,1
+access_report_dr_home_report_op_summary,Access Abstract Report OP Summary,model_report_dr_home_report_op_summary,base.group_user,1,1,1,1
+access_report_overall_summary,Access Report Overall Summary,model_report_overall_summary,base.group_user,1,1,1,1
+access_overall_summary_report,Access OP Overall Summary Abstract,model_report_dr_home_report_overall_summary,base.group_user,1,1,1,1
