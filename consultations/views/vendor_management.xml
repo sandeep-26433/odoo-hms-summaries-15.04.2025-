@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- list View for Vendor Management -->
+    <record id="view_vendor_management_list" model="ir.ui.view">
+        <field name="name">vendor.management.list</field>
+        <field name="model">vendor.management</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="vendor_id" />
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View for Vendor Management with Product Lines -->
+    <record id="vendor_management_form" model="ir.ui.view">
+        <field name="name">vendor.management.form</field>
+        <field name="model">vendor.management</field>
+        <field name="arch" type="xml">
+            <form string="Vendor Management">
+                <sheet>
+                    <group>
+                        <field name="invoice_number" />
+
+                        <field name="vendor_id" />
+                    </group>
+                    <notebook>
+                        <page string="Product Lines">
+                            <field name="line_ids">
+                                <list editable="bottom">
+                                    <field name="product_id" />
+                                    <field name="quantity" />
+                                    <field name="cost" />
+                                    <field name="lot_number" />
+                                    <field name="expiry_date" />
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action for Vendor Management -->
+    <record id="vendor_management_action" model="ir.actions.act_window">
+        <field name="name">Vendor Management</field>
+        <field name="res_model">vendor.management</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No Records Yet!!!
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu Item -->
+    <menuitem id="vendor_management_menu"
+        name="Vendor Management"
+        parent="appointment_booking_root_menu"
+        action="vendor_management_action"
+        sequence="30" />
+</odoo>

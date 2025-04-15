@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_appointment_booking,access.appointment.booking,model_appointment_booking,,1,1,1,1
+access_consultation_doctor,access.consultation.doctor,model_consultation_doctor,,1,1,1,1
+access_vendor_management,access.vendor.management,model_vendor_management,,1,1,1,1
+access_vendor_management_line,vendor.management.line,model_vendor_management_line,,1,1,1,1
